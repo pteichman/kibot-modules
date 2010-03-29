@@ -6,7 +6,6 @@ from kibot.irclib import nm_to_n
 
 class woo(kibot.BaseModule.BaseModule):
     def __init__(self, bot):
-        random.seed()
         kibot.BaseModule.BaseModule.__init__(self, bot)
 
     def _on_pubmsg(self, conn, event):
