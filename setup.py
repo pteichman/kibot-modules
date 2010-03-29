@@ -26,6 +26,7 @@ setup(
     entry_points = {
         "kibot.modules" : [
             "cobe = kibot.modules.cobe",
+            "eightball = kibot.modules.eightball",
             "woo = kibot.modules.woo"
         ]
     }
