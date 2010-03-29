@@ -1,5 +1,6 @@
 import kibot.BaseModule
 import random
+import re
 
 from kibot.irclib import nm_to_n
 
@@ -9,8 +10,6 @@ class woo(kibot.BaseModule.BaseModule):
         kibot.BaseModule.BaseModule.__init__(self, bot)
 
     def _on_pubmsg(self, conn, event):
-        import string, re
-
         message = event.args[0]
         message = re.sub("<\S+>", "", message)
         match = re.match("\s*(\S+)\s*[,:]\s*(.*?)\s*$", message)
