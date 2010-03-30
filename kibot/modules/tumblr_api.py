@@ -212,8 +212,12 @@ class Api:
 			req = Request(url, data)
 		newid = None
 		try: 
-			urlopen(req)
-			raise TumblrError("Error writing post")
+			resp = urlopen(req)
+			if 201 == resp.code:
+				newid = resp.read()
+				return self.read(id=newid)
+
+			raise TumblrError("Error writing post: %s" % (resp.read()))
 
 		except HTTPError, e:
 			if 201 == e.code:
