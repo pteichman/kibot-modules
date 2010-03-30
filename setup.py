@@ -27,6 +27,7 @@ setup(
         "kibot.modules" : [
             "cobe = kibot.modules.cobe",
             "eightball = kibot.modules.eightball",
+            "tumblr = kibot.modules.tumblr",
             "woo = kibot.modules.woo"
         ]
     }
