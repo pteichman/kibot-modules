@@ -13,7 +13,7 @@ setup(
     description = "A suite of useful modules for kibot.",
     packages = find_packages(),
     install_requires = ["kibot>=0.0.13",
-                        "cobe>=1.0.1"],
+                        "cobe>=1.0.3"],
     namespace_packages = ["kibot", "kibot.modules"],
     classifiers = [
         "Development Status :: 5 - Production/Stable",

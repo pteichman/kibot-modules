@@ -10,6 +10,7 @@ from kibot.irclib import nm_to_n
 
 from cobe.brain import Brain
 import os
+import datetime
 
 class cobe(kibot.BaseModule.BaseModule):
     """intelligence"""
@@ -18,8 +19,15 @@ class cobe(kibot.BaseModule.BaseModule):
 
     def __init__(self, bot):
         self._brain_file = os.path.join(bot.op.files.data_dir, "cobe.brain")
+        self._trace_file = os.path.join(bot.op.files.data_dir, "cobe.trace")
 
-        self._brain = Brain(self._brain_file)
+        # rotate logs
+        if os.path.exists(self._trace_file):
+            now = datetime.datetime.now()
+            stamp = now.strftime("%Y-%m-%d.%H%M%S")
+            os.rename(self._trace_file, "%s.%s" % (self._trace_file, stamp))
+
+        self._brain = Brain(self._brain_file, instatrace=self._trace_file)
 
         kibot.BaseModule.BaseModule.__init__(self, bot)
 
