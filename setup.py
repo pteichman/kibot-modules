@@ -6,7 +6,7 @@ use_setuptools()
 from setuptools import setup, find_packages
 setup(
     name = "kibot-modules",
-    version = "0.1",
+    version = "0.2.0",
     author = "Peter Teichman",
     author_email = "peter@teichman.org",
     url = "http://wiki.github.com/pteichman/kibot-modules/",
